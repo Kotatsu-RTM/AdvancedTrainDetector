@@ -1,0 +1,15 @@
+tile.advancedtraindetector.name=AdvancedTrainDetector
+
+item.advancedtraindetector:itempossettingtool.0.name=Pos Setting Tool
+
+AdvancedTrainDetector.gui.cancel=Cancel
+AdvancedTrainDetector.gui.done=Done
+AdvancedTrainDetector.gui.flipflop=FlipFlop
+AdvancedTrainDetector.gui.flipflop_hover=RS signal output is switched only when incoming and outgoing trains are detected.
+AdvancedTrainDetector.gui.reversal=Reversal
+AdvancedTrainDetector.gui.reversal_hover=Inverts the output of the RS signal.
+
+AdvancedTrainDetector.itempos.block_coordinates_save=Coordinates are now registered on the block. [%1$d, %2$d, %3$d]
+AdvancedTrainDetector.itempos.block_coordinates_already=These coordinates are already registered in the block.
+AdvancedTrainDetector.itempos.item_coordinates_saved=Coordinates have been registered for the item. [%1$d, %2$d, %3$d]
+AdvancedTrainDetector.itempos.item_coordinates_notsaved=No coordinates are registered for this item.

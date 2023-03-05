@@ -1,0 +1,8 @@
+name: Build
+
+on: push
+
+jobs:
+  build:
+    name: Build
+    uses: Kotatsu-RTM/.github/.github/workflows/rtmpack_build.yml@master

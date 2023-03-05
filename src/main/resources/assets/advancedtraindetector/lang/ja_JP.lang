@@ -1,0 +1,13 @@
+item.advancedtraindetector:itempossettingtool.0.name=座標設定ツール
+
+AdvancedTrainDetector.gui.cancel=キャンセル
+AdvancedTrainDetector.gui.done=決定
+AdvancedTrainDetector.gui.flipflop=フリップフロップ
+AdvancedTrainDetector.gui.flipflop_hover=列車の入線と出線を検知した時のみRS信号の出力を切り替えます
+AdvancedTrainDetector.gui.reversal=出力反転
+AdvancedTrainDetector.gui.reversal_hover=RS信号の出力を反転させます
+
+AdvancedTrainDetector.itempos.block_coordinates_save=ブロックに座標を登録しました [%1$d, %2$d, %3$d]
+AdvancedTrainDetector.itempos.block_coordinates_already=ブロックにこの座標は既に登録されています
+AdvancedTrainDetector.itempos.item_coordinates_saved=アイテムに座標を登録しました [%1$d, %2$d, %3$d]
+AdvancedTrainDetector.itempos.item_coordinates_notsaved=このアイテムには座標が登録されていません
