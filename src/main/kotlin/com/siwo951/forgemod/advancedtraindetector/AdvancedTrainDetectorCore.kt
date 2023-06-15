@@ -25,7 +25,6 @@ import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.SideOnly
 
 @Mod(modid = AdvancedTrainDetectorCore.MODID, version = AdvancedTrainDetectorCore.VERSION, name = AdvancedTrainDetectorCore.MODNAME)
-@Suppress("unused", "UNUSED_PARAMETER", "SpellCheckingInspection")
 class AdvancedTrainDetectorCore {
     @Mod.EventHandler
     fun construct(event: FMLConstructionEvent?) = MinecraftForge.EVENT_BUS.register(this)

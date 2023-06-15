@@ -16,9 +16,7 @@ import net.minecraft.util.ResourceLocation
 import net.minecraft.util.math.BlockPos
 import net.minecraft.world.IBlockAccess
 import net.minecraft.world.World
-import java.util.*
 
-@Suppress("SpellCheckingInspection")
 internal class BlockAdvancedTrainDetector: BlockContainer(Material.ROCK) {
     init {
         setCreativeTab(CreativeTabAdvancedTrainDetector.tabUtils)

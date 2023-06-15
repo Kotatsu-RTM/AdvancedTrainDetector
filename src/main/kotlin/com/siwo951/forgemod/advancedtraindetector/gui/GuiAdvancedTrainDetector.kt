@@ -12,7 +12,6 @@ import org.lwjgl.input.Keyboard
 import org.lwjgl.input.Mouse
 import java.io.IOException
 
-@Suppress("SameParameterValue", "SpellCheckingInspection")
 internal class GuiAdvancedTrainDetector(private val tile: TileEntityAdvancedTrainDetector) : GuiScreenCustom() {
     private val translatePrefix = "AdvancedTrainDetector.gui"
 
