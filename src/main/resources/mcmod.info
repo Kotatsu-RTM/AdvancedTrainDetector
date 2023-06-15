@@ -2,7 +2,7 @@
   {
     "modid": "advancedtraindetector",
     "name": "AdvancedTrainDetector",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "mcversion": "1.12.2",
     "authorList": ["Siwo951", "masa300"]
   }

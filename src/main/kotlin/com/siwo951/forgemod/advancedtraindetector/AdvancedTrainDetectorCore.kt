@@ -78,7 +78,7 @@ class AdvancedTrainDetectorCore {
     companion object {
         const val MODNAME = "AdvancedTrainDetector"
         const val MODID = "advancedtraindetector"
-        const val VERSION = "1.0.0"
+        const val VERSION = "1.0.1"
 
         const val guiId_AdvancedTrainDetector = 0
 
