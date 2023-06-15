@@ -18,62 +18,62 @@ class TileEntityAdvancedTrainDetector: TileEntityCustom(), ITickable {
     var isReversal: Boolean = false
 
     override fun update() {
-        if (this.world.isRemote) return
+        if (world.isRemote) return
 
-        val isDetect = this.detectPos.mapNotNull { this.world.getTileEntity(it) }
+        val isDetect = detectPos.mapNotNull { world.getTileEntity(it) }
             .filterIsInstance<TileEntityLargeRailBase>().any { it.isTrainOnRail }
 
-        if (isDetect == this.isDetectPrev) return
+        if (isDetect == isDetectPrev) return
 
-        when (this.isFlipFlop) {
+        when (isFlipFlop) {
             true -> when (isDetect) {
-                true -> when (this.isRsOutput) {
-                    true -> this.canTurnOff = true
-                    else -> this.isRsOutput = true
+                true -> when (isRsOutput) {
+                    true -> canTurnOff = true
+                    else -> isRsOutput = true
                 }
-                else -> if (this.canTurnOff) {
-                    this.canTurnOff = false
-                    this.isRsOutput = false
+                else -> if (canTurnOff) {
+                    canTurnOff = false
+                    isRsOutput = false
                 }
             }
             else -> {
-                this.isRsOutput = isDetect
-                this.canTurnOff = false
+                isRsOutput = isDetect
+                canTurnOff = false
             }
         }
 
-        this.isDetectPrev = isDetect
+        isDetectPrev = isDetect
 
-        this.world.notifyNeighborsOfStateChange(this.pos, this.blockType, true)
+        world.notifyNeighborsOfStateChange(pos, blockType, true)
     }
 
     override fun readFromNBT(nbt: NBTTagCompound) {
         super.readFromNBT(nbt)
 
-        this.detectPos.clear()
+        detectPos.clear()
         nbt.getTagList("detectPosList", 10).apply {
             repeat(tagCount()) { detectPos += getCompoundTagAt(it).getLong("pos").toBlockPos() }
         }
 
-        this.isFlipFlop = nbt.getBoolean("isFlipFlop")
-        this.isReversal = nbt.getBoolean("isReversal")
+        isFlipFlop = nbt.getBoolean("isFlipFlop")
+        isReversal = nbt.getBoolean("isReversal")
     }
     override fun writeToNBT(nbt: NBTTagCompound): NBTTagCompound {
         super.writeToNBT(nbt)
 
         val detectPosList = NBTTagList()
-        this.detectPos.forEach {
+        detectPos.forEach {
             val tag = NBTTagCompound()
             tag.setLong("pos", it.toLong())
             detectPosList.appendTag(tag)
         }
         nbt.setTag("detectPosList", detectPosList)
 
-        nbt.setBoolean("isFlipFlop", this.isFlipFlop)
-        nbt.setBoolean("isReversal", this.isReversal)
+        nbt.setBoolean("isFlipFlop", isFlipFlop)
+        nbt.setBoolean("isReversal", isReversal)
 
         return nbt
     }
 
-    fun isRsOutput(): Boolean = if (this.isReversal) !this.isRsOutput else this.isRsOutput
+    fun isRsOutput(): Boolean = if (isReversal) !isRsOutput else isRsOutput
 }
