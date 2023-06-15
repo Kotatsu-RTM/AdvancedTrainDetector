@@ -30,7 +30,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: AdvancedTrainDetector
+          name: Artifact-AdvancedTrainDetector
           path: ./build/libs/*
           retention-days: 30
 
