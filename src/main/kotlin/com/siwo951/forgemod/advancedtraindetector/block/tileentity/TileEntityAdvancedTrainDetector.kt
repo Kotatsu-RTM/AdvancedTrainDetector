@@ -25,20 +25,18 @@ class TileEntityAdvancedTrainDetector: TileEntityCustom(), ITickable {
 
         if (isDetect == isDetectPrev) return
 
-        when (isFlipFlop) {
-            true -> when (isDetect) {
-                true -> when (isRsOutput) {
-                    true -> canTurnOff = true
-                    else -> isRsOutput = true
-                }
-                else -> if (canTurnOff) {
-                    canTurnOff = false
-                    isRsOutput = false
-                }
-            }
-            else -> {
+        when {
+            !isFlipFlop -> {
                 isRsOutput = isDetect
                 canTurnOff = false
+            }
+            isDetect -> when (isRsOutput) {
+                true -> canTurnOff = true
+                else -> isRsOutput = true
+            }
+            else -> if (canTurnOff) {
+                canTurnOff = false
+                isRsOutput = false
             }
         }
 
