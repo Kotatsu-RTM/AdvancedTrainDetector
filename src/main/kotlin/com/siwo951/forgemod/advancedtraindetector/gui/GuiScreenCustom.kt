@@ -4,7 +4,7 @@ import net.minecraft.client.gui.GuiScreen
 import net.minecraft.client.gui.GuiTextField
 import java.io.IOException
 
-internal abstract class GuiScreenCustom: GuiScreen() {
+abstract class GuiScreenCustom: GuiScreen() {
     val textFieldList = mutableListOf<GuiTextField>()
 
     override fun initGui() {

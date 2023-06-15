@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack
 import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.SideOnly
 
-internal class CreativeTabAdvancedTrainDetector(label: String) : CreativeTabs(label) {
+class CreativeTabAdvancedTrainDetector(label: String) : CreativeTabs(label) {
     @SideOnly(Side.CLIENT)
     override fun getTabIconItem(): ItemStack = ItemStack(Item.getItemFromBlock(AdvancedTrainDetectorCore.ADVANCED_TRAIN_DETECTOR_BLOCK))
 

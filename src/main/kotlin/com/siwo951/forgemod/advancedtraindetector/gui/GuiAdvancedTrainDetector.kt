@@ -12,7 +12,7 @@ import org.lwjgl.input.Keyboard
 import org.lwjgl.input.Mouse
 import java.io.IOException
 
-internal class GuiAdvancedTrainDetector(private val tile: TileEntityAdvancedTrainDetector) : GuiScreenCustom() {
+class GuiAdvancedTrainDetector(private val tile: TileEntityAdvancedTrainDetector) : GuiScreenCustom() {
     private val translatePrefix = "AdvancedTrainDetector.gui"
 
     private val detectPos: MutableList<BlockPos> = tile.detectPos

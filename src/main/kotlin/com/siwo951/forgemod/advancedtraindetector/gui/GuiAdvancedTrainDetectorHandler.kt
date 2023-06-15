@@ -7,7 +7,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 import net.minecraftforge.fml.common.network.IGuiHandler
 
-internal class GuiAdvancedTrainDetectorHandler : IGuiHandler {
+class GuiAdvancedTrainDetectorHandler : IGuiHandler {
     override fun getServerGuiElement(ID: Int, player: EntityPlayer, world: World, x: Int, y: Int, z: Int): Any? = null
 
     override fun getClientGuiElement(ID: Int, player: EntityPlayer, world: World, x: Int, y: Int, z: Int): Any? {

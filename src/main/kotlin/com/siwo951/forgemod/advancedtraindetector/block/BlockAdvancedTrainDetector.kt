@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.world.IBlockAccess
 import net.minecraft.world.World
 
-internal class BlockAdvancedTrainDetector: BlockContainer(Material.ROCK) {
+class BlockAdvancedTrainDetector: BlockContainer(Material.ROCK) {
     init {
         setCreativeTab(CreativeTabAdvancedTrainDetector.tabUtils)
         this.registryName = ResourceLocation("${AdvancedTrainDetectorCore.MODID}:advancedtraindetector")

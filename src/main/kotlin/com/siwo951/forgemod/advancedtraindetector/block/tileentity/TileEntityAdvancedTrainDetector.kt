@@ -7,7 +7,7 @@ import net.minecraft.nbt.NBTTagList
 import net.minecraft.util.ITickable
 import net.minecraft.util.math.BlockPos
 
-internal class TileEntityAdvancedTrainDetector: TileEntityCustom(), ITickable {
+class TileEntityAdvancedTrainDetector: TileEntityCustom(), ITickable {
     private var isRsOutput: Boolean = false
 
     private var canTurnOff: Boolean = false

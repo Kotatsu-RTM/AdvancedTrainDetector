@@ -19,7 +19,7 @@ import net.minecraft.util.math.BlockPos
 import net.minecraft.util.text.TextComponentTranslation
 import net.minecraft.world.World
 
-internal class ItemPosSettingTool : Item() {
+class ItemPosSettingTool : Item() {
     private val translatePrefix = "AdvancedTrainDetector.itempos"
 
     init {

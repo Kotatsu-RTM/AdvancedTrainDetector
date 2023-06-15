@@ -11,7 +11,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext
 
-internal class PacketAdvancedTrainDetector: IMessage, IMessageHandler<PacketAdvancedTrainDetector, IMessage?> {
+class PacketAdvancedTrainDetector: IMessage, IMessageHandler<PacketAdvancedTrainDetector, IMessage?> {
     private var entityPos: BlockPos? = null
 
     private var detectPos: MutableList<BlockPos>? = null
