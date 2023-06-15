@@ -1,11 +1,9 @@
-@file:Suppress("SpellCheckingInspection")
-
 import net.minecraftforge.gradle.userdev.DependencyManagementExtension
 import net.minecraftforge.gradle.userdev.UserDevExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.22"
 }
 
 group = "com.siwo951.forgemod.advancedtraindetector"
@@ -18,7 +16,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("net.minecraftforge.gradle:ForgeGradle:5.1.+") {
+        classpath("net.minecraftforge.gradle:ForgeGradle:5.1.69") {
             isChanging = true
         }
     }
