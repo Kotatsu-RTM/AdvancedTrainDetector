@@ -2,11 +2,8 @@
   {
     "modid": "advancedtraindetector",
     "name": "AdvancedTrainDetector",
-    "description": "",
     "version": "1.0.0",
     "mcversion": "1.12.2",
-    "authorList": ["Siwo951", "masa300"],
-    "requiredMods": ["forge", "ngtlib", "rtm"],
-    "dependencies": ["ngtlib", "rtm"]
+    "authorList": ["Siwo951", "masa300"]
   }
 ]
