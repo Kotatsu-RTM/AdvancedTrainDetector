@@ -1,9 +1,7 @@
 package com.siwo951.forgemod.advancedtraindetector.network
 
 import com.siwo951.forgemod.advancedtraindetector.block.tileentity.TileEntityAdvancedTrainDetector
-import com.siwo951.forgemod.advancedtraindetector.readBlockPosList
 import com.siwo951.forgemod.advancedtraindetector.toBlockPos
-import com.siwo951.forgemod.advancedtraindetector.writeBlockPosList
 import io.netty.buffer.ByteBuf
 import jp.ngt.ngtlib.NGTCore
 import jp.ngt.ngtlib.network.PacketNBT
@@ -13,7 +11,6 @@ import net.minecraftforge.fml.common.network.simpleimpl.IMessage
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler
 import net.minecraftforge.fml.common.network.simpleimpl.MessageContext
 
-@Suppress("unused")
 internal class PacketAdvancedTrainDetector: IMessage, IMessageHandler<PacketAdvancedTrainDetector, IMessage?> {
     private var entityPos: BlockPos? = null
 
@@ -46,7 +43,6 @@ internal class PacketAdvancedTrainDetector: IMessage, IMessageHandler<PacketAdva
         this.isReversal = buf.readBoolean()
     }
 
-    //Server
     override fun onMessage(message: PacketAdvancedTrainDetector, ctx: MessageContext): IMessage? {
         val tile = ctx.serverHandler.player.world.getTileEntity(message.entityPos!!) as TileEntityAdvancedTrainDetector
 
@@ -67,5 +63,18 @@ internal class PacketAdvancedTrainDetector: IMessage, IMessageHandler<PacketAdva
         tile.world.notifyNeighborsOfStateChange(tile.pos, tile.blockType, true)
 
         return null
+    }
+
+    private fun ByteBuf.readBlockPosList(): MutableList<BlockPos> {
+        val blockPosList = mutableListOf<BlockPos>()
+
+        val valueSize = this.readInt()
+        repeat(valueSize) { blockPosList += this.readLong().toBlockPos() }
+
+        return blockPosList
+    }
+    private fun ByteBuf.writeBlockPosList(value: MutableList<BlockPos>) {
+        this.writeInt(value.size)
+        value.forEach { this.writeLong(it.toLong()) }
     }
 }

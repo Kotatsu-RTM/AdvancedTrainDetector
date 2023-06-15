@@ -2,7 +2,6 @@ package com.siwo951.forgemod.advancedtraindetector.item
 
 import com.siwo951.forgemod.advancedtraindetector.AdvancedTrainDetectorCore
 import com.siwo951.forgemod.advancedtraindetector.CreativeTabAdvancedTrainDetector
-import com.siwo951.forgemod.advancedtraindetector.addDetectPos
 import com.siwo951.forgemod.advancedtraindetector.block.tileentity.TileEntityAdvancedTrainDetector
 import com.siwo951.forgemod.advancedtraindetector.toBlockPos
 import jp.ngt.ngtlib.NGTCore
@@ -81,5 +80,15 @@ internal class ItemPosSettingTool : Item() {
         this.sendMessage(
             TextComponentTranslation(translateKey, blockPos?.x, blockPos?.y, blockPos?.z)
         )
+    }
+    private fun TileEntityAdvancedTrainDetector.addDetectPos(detectPos: BlockPos): Boolean {
+        this.detectPos.apply {
+            if (any { it == detectPos }) return false
+            when (this[0] == BlockPos.ORIGIN) {
+                true -> this[0] = detectPos
+                else -> this += detectPos
+            }
+        }
+        return true
     }
 }
