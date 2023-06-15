@@ -24,8 +24,8 @@ class ItemPosSettingTool : Item() {
 
     init {
         this.creativeTab = CreativeTabAdvancedTrainDetector.tabUtils
-        this.registryName = ResourceLocation("${AdvancedTrainDetectorCore.MODID}:itempossettingtool")
-        this.unlocalizedName = "${AdvancedTrainDetectorCore.MODID}:itempossettingtool"
+        this.registryName = ResourceLocation("${AdvancedTrainDetectorCore.MOD_ID}:itempossettingtool")
+        this.unlocalizedName = "${AdvancedTrainDetectorCore.MOD_ID}:itempossettingtool"
         this.hasSubtypes = true
     }
 

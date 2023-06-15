@@ -20,7 +20,7 @@ import net.minecraft.world.World
 class BlockAdvancedTrainDetector: BlockContainer(Material.ROCK) {
     init {
         setCreativeTab(CreativeTabAdvancedTrainDetector.tabUtils)
-        this.registryName = ResourceLocation("${AdvancedTrainDetectorCore.MODID}:advancedtraindetector")
+        this.registryName = ResourceLocation("${AdvancedTrainDetectorCore.MOD_ID}:advancedtraindetector")
         this.unlocalizedName = "advancedtraindetector"
         this.soundType = SoundType.STONE
     }

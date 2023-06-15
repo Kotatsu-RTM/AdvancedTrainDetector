@@ -28,7 +28,7 @@ import net.minecraftforge.fml.relauncher.Side
 import net.minecraftforge.fml.relauncher.SideOnly
 
 @Mod(
-    modid = AdvancedTrainDetectorCore.MODID, version = AdvancedTrainDetectorCore.VERSION, name = AdvancedTrainDetectorCore.MODNAME,
+    modid = AdvancedTrainDetectorCore.MOD_ID, version = AdvancedTrainDetectorCore.MOD_VER, name = AdvancedTrainDetectorCore.MOD_NAME,
     dependencies = "required-after:${ForgeVersion.MOD_ID};required-after:${RTMCore.MODID};required-after:${NGTCore.MODID}"
 )
 class AdvancedTrainDetectorCore {
@@ -43,7 +43,7 @@ class AdvancedTrainDetectorCore {
             POS_SETTING_TOOL
         )
         event.registry.register(
-            ItemBlock(ADVANCED_TRAIN_DETECTOR_BLOCK).setRegistryName(MODID, "advancedtraindetector")
+            ItemBlock(ADVANCED_TRAIN_DETECTOR_BLOCK).setRegistryName(MOD_ID, "advancedtraindetector")
         )
     }
 
@@ -55,11 +55,11 @@ class AdvancedTrainDetectorCore {
     fun registerModels(event: ModelRegistryEvent?) {
         ModelLoader.setCustomModelResourceLocation(
             POS_SETTING_TOOL, 0,
-            ModelResourceLocation(ResourceLocation(MODID, "pos_setting_tool"), "inventory")
+            ModelResourceLocation(ResourceLocation(MOD_ID, "pos_setting_tool"), "inventory")
         )
         ModelLoader.setCustomModelResourceLocation(
             Item.getItemFromBlock(ADVANCED_TRAIN_DETECTOR_BLOCK), 0,
-            ModelResourceLocation(ResourceLocation(MODID, "advancedtraindetector"), "inventory")
+            ModelResourceLocation(ResourceLocation(MOD_ID, "advancedtraindetector"), "inventory")
         )
     }
 
@@ -71,14 +71,14 @@ class AdvancedTrainDetectorCore {
         )
         GameRegistry.registerTileEntity(
             TileEntityAdvancedTrainDetector::class.java,
-            ResourceLocation(MODID, "TE_AdvancedTrainDetector")
+            ResourceLocation(MOD_ID, "TE_AdvancedTrainDetector")
         )
     }
 
     companion object {
-        const val MODNAME = "AdvancedTrainDetector"
-        const val MODID = "advancedtraindetector"
-        const val VERSION = "1.0.1"
+        const val MOD_NAME = "AdvancedTrainDetector"
+        const val MOD_ID = "advancedtraindetector"
+        const val MOD_VER = "1.0.1"
 
         const val guiId_AdvancedTrainDetector = 0
 
@@ -86,7 +86,7 @@ class AdvancedTrainDetectorCore {
         val ADVANCED_TRAIN_DETECTOR_BLOCK: Block = BlockAdvancedTrainDetector()
         val POS_SETTING_TOOL: Item = ItemPosSettingTool()
 
-        @Mod.Instance(MODID)
+        @Mod.Instance(MOD_ID)
         lateinit var INSTANCE: AdvancedTrainDetectorCore
     }
 }
